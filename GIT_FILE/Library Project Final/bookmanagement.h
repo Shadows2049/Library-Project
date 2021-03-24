@@ -26,29 +26,29 @@ typedef struct _BookArray {
 	 unsigned int length; // number of elements in the (Book*) array
 }BookArray;
 
-typedef struct _U{
-    char *username;
-    char *password;
+typedef struct _U{		//linked list containing all users
+    char *username;		//username
+    char *password;		//password
 }User;
 
 
-typedef struct list_node
+typedef struct list_node		//linked list containing all books
 {
 
-Book data ;
+Book data ;						//book info
 
-struct list_node *next ;
+struct list_node *next ;		//pointer to next list
 
-}list_single;
+}list_single;			
 
 
-typedef struct list_u
+typedef struct list_u			//linked list containing User and Borrowed books
 {
-int idar[3];
+int idar[3];					//a user can borrow up to 3 books, idar[3] stores id of up to 3 books
 
-User data ;
+User data ;						//user info
 
-struct list_u *next ;
+struct list_u *next ;			//pointer to next list
 
 }list_user;
 
@@ -98,9 +98,9 @@ list_user *show_userinfo(const char *username, list_single *head, list_user *uhe
 
 list_user *create_user(const char *username, const char *password, list_user *head);
 
-list_user *load_users(const char *filename);
+list_user *load_users(const char *filename);   //load user info to memory
 
-int store_users(const char *filename, list_user *head);
+int store_users(const char *filename, list_user *head);  //store user info to local file
 
 list_user *remove_user(const char *username, list_user *head);
 
